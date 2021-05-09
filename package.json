@@ -1,5 +1,5 @@
 {
-  "name": "cws-cms-theme",
+  "name": "cws",
   "version": "0.1.0",
   "description": "HTML Admin Theme for CWS CMS",
   "scripts": {
@@ -16,7 +16,7 @@
     "watch-js": "nodemon --watch assets/js/cws.js --exec \"npm run js-compile\""
   },
   "author": "Sang Lu <connect.with.sang@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "clean-css-cli": "^4.3.0",
     "node-sass": "^5.0",
