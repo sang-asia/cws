@@ -1,0 +1,37 @@
+- id: home
+  label: Home
+  icon: package
+  child:
+    - id: dashboard
+      label: Dashboard
+      icon: navigation
+      link: ./
+    - id: publishing
+      label: Publishing
+      icon: file-text
+      child:
+        - id: publishing-category
+          label: Category
+          icon: folder
+          link: publishing-category.html
+        - id: publishing-article
+          label: Article
+          icon: file-text
+          link: publishing-article.html
+    - id: contact
+      label: Contact
+      icon: inbox
+      link: contact.html
+- id: settings
+  label: Settings
+  icon: settings
+  child:
+    - id: general-settings
+      label: General Settings
+      icon: settings
+    - id: users-management
+      label: Users Management
+      icon: users
+    - id: about
+      label: About us
+      icon: help-circle

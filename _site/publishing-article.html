@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Sang Lu">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Publishing Article · CWS Admin Theme</title>
+    <link rel="canonical" href="http://localhost:4000/publishing-article.html">
+    <link href="assets/dist/style.min.css" rel="stylesheet">
+  </head>
+  <body >
+    <div id="preload" class="failover">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <div id="wrapper">
+      <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+        <button class="navbar-toggler" type="button" aria-label="Toggle Sidebar" id="sidebar-toggler">
+          <i data-feather="menu"></i>
+        </button>
+        <a class="navbar-brand" href="./">
+          <img src="assets/img/logo.png"/>
+        </a>
+        <div id="navbar-menu">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                <i data-feather="user"></i>
+                Administrator
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">
+                  <i data-feather="user"></i>
+                  Profile
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="login.html">
+                  <i data-feather="log-out"></i>
+                  Logout
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <button class="navbar-toggler" type="button" aria-label="Toggle Top Menu" id="navbar-menu-toggler">
+          <i data-feather="chevrons-down" class="down"></i>
+          <i data-feather="chevrons-up" class="up"></i>
+        </button>
+      </nav>
+      <div id="main">
+        <div id="sidebar">
+          <div id="sidebar-navigation">
+            <div class="nav flex-column nav-pills" id="sidebar-navigation-tabs" role="tablist" aria-orientation="vertical">
+              <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
+               role="tab"
+               aria-controls="v-pills-home" aria-selected="true" data-tooltip="Home">
+                <i data-feather="package"></i>
+              </a>
+              <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings"
+               role="tab"
+               aria-controls="v-pills-settings" aria-selected="true" data-tooltip="Settings">
+                <i data-feather="settings"></i>
+              </a>
+            </div>
+            <div class="tab-content" id="sidebar-navigation-content">
+              <div class="tab-pane fade" id="v-pills-home" role="tabpanel"
+                 aria-labelledby="v-pills-home-tab">
+                <h5 class="tab-content-title">Home</h5>
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link" href="./">
+                      <i data-feather="navigation"></i>
+                      Dashboard
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="collapse" data-target="#sidebar-sub-publishing" aria-expanded="false" aria-controls="#sidebar-sub-publishing">
+                      <i data-feather="file-text"></i>
+                      Publishing
+                    </a>
+                    <div class="collapse" id="sidebar-sub-publishing">
+                      <ul class="nav flex-column">
+                        <li class="nav-item">
+                          <a class="nav-link" href="publishing-category.html">
+                            <i data-feather="folder"></i>
+                            Category
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" href="publishing-article.html">
+                            <i data-feather="file-text"></i>
+                            Article
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact.html">
+                      <i data-feather="inbox"></i>
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
+                 aria-labelledby="v-pills-settings-tab">
+                <h5 class="tab-content-title">Settings</h5>
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <i data-feather="settings"></i>
+                      General Settings
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <i data-feather="users"></i>
+                      Users Management
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <i data-feather="help-circle"></i>
+                      About us
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div id="sidebar-off-canvas">
+            <i class="left" data-feather="chevrons-left"></i>
+            <i class="right" data-feather="chevrons-right"></i>
+          </div>
+        </div>
+        <div id="content">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="./"><i data-feather="home"></i>Home</a>
+              </li>
+              <li class="breadcrumb-item active">
+                Publishing
+              </li>
+              <li class="breadcrumb-item active">
+                Article
+              </li>
+            </ol>
+          </nav>
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <div class="form-action mb-3">
+                <div>
+                  <div class="dropdown">
+                    <button class="btn btn-info dropdown-toggle" type="button" id="menu-action-button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i data-feather="zap"></i>
+                      Actions
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="menu-action-button">
+                      <a class="dropdown-item" href="#">
+                        <i class="text-success" data-feather="check-square"></i>
+                        Enable
+                      </a>
+                      <a class="dropdown-item" href="#">
+                        <i class="text-danger" data-feather="square"></i>
+                        Disable
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">
+                        <i class="text-primary" data-feather="folder"></i>
+                        Move to...
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">
+                        <i class="text-danger" data-feather="trash"></i>
+                        Delete
+                      </a>
+                    </div>
+                  </div>
+                  <a class="btn btn-dark" href="#list-filter" data-toggle="collapse" aria-expanded="true" aria-controls="list-filter">
+                    <i data-feather="filter"></i>
+                    Filter
+                  </a>
+                </div>
+                <div>
+                  <a href="publishing-article-form.html" class="btn btn-primary">
+                    <i data-feather="plus"></i>
+                    New Article
+                  </a>
+                </div>
+              </div>
+              <div class="card collapse mb-3 list-filter" id="list-filter">
+                <div class="card-body p-1 form-inline bg-gradient-light">
+                  <input type="text" class="form-control form-control-sm" placeholder="Title" />
+                  <input type="text" class="form-control form-control-sm" placeholder="Content" />
+                  <select class="form-control form-control-sm">
+                    <option value="-1">- All Category -</option>
+                    <option>Culture</option>
+                    <option>News</option>
+                    <option>Sport</option>
+                    <option>Worklife</option>
+                    <option>Travel</option>
+                    <option>Future</option>
+                  </select>
+                  <select class="form-control form-control-sm">
+                    <option value="-1">- All Status -</option>
+                    <option value="0">Disabled</option>
+                    <option value="1">Enabled</option>
+                  </select>
+                  <button type="submit" class="btn btn-sm btn-dark">
+                    <i data-feather="filter"></i>
+                    Filter
+                  </button>
+                </div>
+              </div>
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>
+                        <div class="pretty p-default p-curve p-smooth">
+                          <input type="checkbox" id="check-all" data-toggle="check-all"/>
+                          <div class="state p-primary-o"><label></label></div>
+                        </div>
+                        Name
+                      </th>
+                      <th >Category</th>
+                      <th class="text-center">Status</th>
+                      <th class="text-center">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="pretty p-default p-curve p-smooth">
+                          <input type="checkbox" aria-labelledby="#check-all"/>
+                          <div class="state p-primary-o"><label></label></div>
+                        </div>
+                        Coronavirus: Brazil becomes second country to hit one million cases
+                      </td>
+                      <td >News</td>
+                      <td class="text-center">
+                        <span class="text-success" data-toggle="tooltip" title="Enabled"><i data-feather="check-square"></i></span>
+                      </td>
+                      <td class="text-center text-nowrap">
+                        <a class="text-primary" href="#" data-toggle="tooltip" title="Edit"><i data-feather="edit-2"></i></a>
+                        <a class="text-danger" href="#" data-toggle="tooltip" title="Delete"><i data-feather="trash"></i></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="pretty p-default p-curve p-smooth">
+                          <input type="checkbox" aria-labelledby="#check-all"/>
+                          <div class="state p-primary-o"><label></label></div>
+                        </div>
+                        Leroy Sane: Man City winger wants to leave, says Pep Guardiola
+                      </td>
+                      <td >Sport</td>
+                      <td class="text-center">
+                        <span class="text-success" data-toggle="tooltip" title="Enabled"><i data-feather="check-square"></i></span>
+                      </td>
+                      <td class="text-center text-nowrap">
+                        <a class="text-primary" href="#" data-toggle="tooltip" title="Edit"><i data-feather="edit-2"></i></a>
+                        <a class="text-danger" href="#" data-toggle="tooltip" title="Delete"><i data-feather="trash"></i></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="pretty p-default p-curve p-smooth">
+                          <input type="checkbox" aria-labelledby="#check-all"/>
+                          <div class="state p-primary-o"><label></label></div>
+                        </div>
+                        The learning opportunities hiding in our failures
+                      </td>
+                      <td >Worklife</td>
+                      <td class="text-center">
+                        <span class="text-danger" data-toggle="tooltip" title="Disabled"><i data-feather="square"></i></span>
+                      </td>
+                      <td class="text-center text-nowrap">
+                        <a class="text-primary" href="#" data-toggle="tooltip" title="Edit"><i data-feather="edit-2"></i></a>
+                        <a class="text-danger" href="#" data-toggle="tooltip" title="Delete"><i data-feather="trash"></i></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="pretty p-default p-curve p-smooth">
+                          <input type="checkbox" aria-labelledby="#check-all"/>
+                          <div class="state p-primary-o"><label></label></div>
+                        </div>
+                        The island with a key to our future
+                      </td>
+                      <td >Travel</td>
+                      <td class="text-center">
+                        <span class="text-success" data-toggle="tooltip" title="Enabled"><i data-feather="check-square"></i></span>
+                      </td>
+                      <td class="text-center text-nowrap">
+                        <a class="text-primary" href="#" data-toggle="tooltip" title="Edit"><i data-feather="edit-2"></i></a>
+                        <a class="text-danger" href="#" data-toggle="tooltip" title="Delete"><i data-feather="trash"></i></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="pretty p-default p-curve p-smooth">
+                          <input type="checkbox" aria-labelledby="#check-all"/>
+                          <div class="state p-primary-o"><label></label></div>
+                        </div>
+                        How face masks affect our communication
+                      </td>
+                      <td >Future</td>
+                      <td class="text-center">
+                        <span class="text-success" data-toggle="tooltip" title="Enabled"><i data-feather="check-square"></i></span>
+                      </td>
+                      <td class="text-center text-nowrap">
+                        <a class="text-primary" href="#" data-toggle="tooltip" title="Edit"><i data-feather="edit-2"></i></a>
+                        <a class="text-danger" href="#" data-toggle="tooltip" title="Delete"><i data-feather="trash"></i></a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="d-flex justify-content-end">
+                <nav aria-label="Pagination">
+                  <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <footer>
+            <div>Copyright &copy; 2020 by Sang Lu. All rights reserved.</div>
+            <div>
+              <a href="#">Support</a>
+              <a href="#">Privacy Policy</a>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script src="assets/dist/bundle.min.js"></script>
+  </body>
+</html>

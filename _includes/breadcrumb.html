@@ -1,0 +1,18 @@
+{% if page.breadcrumb %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="./"><i data-feather="home"></i>Home</a>
+            </li>
+            {%- for item in page.breadcrumb -%}
+                <li class="breadcrumb-item{% if item.active %} active{% endif %}">
+                    {% if item.link %}
+                        <a href="{{ item.link }}">{{ item.label }}</a>
+                    {% else %}
+                        {{ item.label}}
+                    {% endif %}
+                </li>
+            {%- endfor -%}
+        </ol>
+    </nav>
+{% endif %}

@@ -1,0 +1,25 @@
+---
+layout: default
+title: Dashboard
+sidebar_active: "dashboard"
+breadcrumb:
+    - label: Dashboard
+      link: null
+      active: true
+---
+
+{% include navbar.html %}
+
+<div id="main">
+    {% include sidebar.html %}
+    <div id="content">
+        {% include breadcrumb.html %}
+        <div class="jumbotron">
+            <h1 class="display-5">Hello, Administrator!</h1>
+            <p class="lead">Today is June 15th 2020.</p>
+            <hr class="my-4">
+            <p>You can discover all functions in your left hand sidebar.</p>
+        </div>
+        {% include footer.html %}
+    </div>
+</div>

@@ -1,0 +1,168 @@
+---
+layout: default
+title: Write Article
+sidebar_active: "publishing-article"
+breadcrumb:
+    - label: Publishing
+      link: null
+      active: true
+    - label: Article
+      link: publishing-article.html
+      active: false
+    - label: Create
+      link: null
+      active: true
+extra_js:
+    - assets/plugins/ckeditor-4.14.1/ckeditor.js
+script: |
+    <script>
+        // CKEDITOR.replace('editor', CWS.CKEDITOR_CONFIG.FULL);
+        CKEDITOR.replace('editor2', CWS.CKEDITOR_CONFIG.FULL);
+    </script>
+---
+
+{% include navbar.html %}
+
+<div id="main">
+    {% include sidebar.html %}
+    <div id="content">
+        {% include breadcrumb.html %}
+        <form method="get" action="publishing-article.html">
+            <div class="form-layout-sidebar">
+                <!-- General Information -->
+                <div class="card left shadow-sm">
+                    <div class="card-body">
+                        <div class="form-group row required">
+                            <label class="col-12 col-md-3 col-form-label" for="title">Title</label>
+                            <div class="col-12 col-md-9">
+                                <input class="form-control" type="text" id="title" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-md-3 col-form-label" for="slug">Slug</label>
+                            <div class="col-12 col-md-9">
+                                <input class="form-control" type="text" id="slug" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-md-3 col-form-label" for="category">Category</label>
+                            <div class="col-12 col-md-9">
+                                <select class="form-control" id="category">
+                                    <option value="-1">- Select Category -</option>
+                                    {% for item in site.data.publishing.category.data %}
+                                    <option>{{ item.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-md-3 col-form-label">Status</label>
+                            <div class="col-12 col-md-9 d-flex align-items-center">
+                                <div>
+                                    {% include form/radio.html color="success" id="status-enabled" name="status" label="Enabled" checked=true %}
+                                    {% include form/radio.html color="danger" id="status-disabled" name="status" label="Disabled" %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-md-3 col-form-label" for="description">Description</label>
+                            <div class="col-12 col-md-9">
+                                <textarea class="form-control" id="description"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="editor2">Content</label>
+                            <textarea id="editor2"></textarea>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-md-3 col-form-label" for="tags">Tags</label>
+                            <div class="col-12 col-md-9">
+                                <input type="text" class="form-control" id="tags" data-toggle="tags" value="hello,test"/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-md-3 col-form-label" for="meta-keyword">Meta Keyword</label>
+                            <div class="col-12 col-md-9">
+                                <input class="form-control" type="text" id="meta-keyword" data-toggle="tags" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-md-3 col-form-label" for="meta-description">Meta Description</label>
+                            <div class="col-12 col-md-9">
+                                <textarea class="form-control" id="meta-description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- / General Information -->
+                <div class="right">
+                    <!-- Actions -->
+                    <div class="card mb-3 shadow-sm">
+                        <div class="card-body">
+                            <button class="btn btn-block btn-primary d-flex justify-content-between" type="submit">
+                                Save
+                                <i data-feather="save"></i>
+                            </button>
+                            <button class="btn btn-block btn-info d-flex justify-content-between" type="submit">
+                                Save &amp; Add
+                                <i data-feather="plus-circle"></i>
+                            </button>
+                            <a href="publishing-article.html" class="btn btn-block btn-danger d-flex justify-content-between">
+                                Return
+                                <i data-feather="x-circle"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- / Actions -->
+                    <!-- Avatar -->
+                    <div class="card mb-3 shadow-sm">
+                        <div class="card-body">
+                            <img src="assets/img/no-image.png" class="img-thumbnail">
+                            <a href="#" class="d-block text-center text-danger my-1 py-1">Remove Image</a>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="image">
+                                <label class="custom-file-label" for="image">Choose file</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / Avatar -->
+                    <!-- Meta Information -->
+                    <!--<div class="card shadow-sm">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="category">Category</label>
+                                <select class="form-control" id="category">
+                                    <option value="-1">- Select Category -</option>
+                                    {% for item in site.data.publishing.category.data %}
+                                        <option>{{ item.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Status</label>
+                                <div>
+                                    {% include form/radio.html color="success" id="status-enabled" name="status" label="Enabled" checked=true %}
+                                    {% include form/radio.html color="danger" id="status-disabled" name="status" label="Disabled" %}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tags">Tags</label>
+                                <input type="text" class="form-control" id="tags" data-toggle="tags" value="hello,test"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="meta-keyword">Meta Keyword</label>
+                                <input type="text" class="form-control" id="meta-keyword" data-toggle="tags"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="meta-description">Meta Description</label>
+                                <textarea class="form-control" id="meta-description"></textarea>
+                            </div>
+                        </div>
+                    </div>-->
+                    <!-- / Meta Information -->
+                </div>
+            </div>
+        </form>
+        {% include footer.html %}
+    </div>
+</div>

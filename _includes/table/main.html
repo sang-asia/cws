@@ -1,0 +1,32 @@
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            {% for item in include.config %}
+                {% if item.include_title %}
+                    {% include {{ item.include_title }} label=item.label %}
+                {% else %}
+                    <th {% if item.align %}class="text-{{ item.align }}"{% endif %}>{{ item.label }}</th>
+                {% endif %}
+            {% endfor %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in include.data %}
+            <tr>
+            {% for config_item in include.config %}
+                {% if config_item.include_content %}
+                    {% assign _value = item[config_item.key] %}
+                    {% include {{ config_item.include_content }} data=item config=config_item %}
+                {% else %}
+                    <td {% if config_item.align %}class="text-{{ config_item.align }}"{% endif %}>{{ item[config_item[key]] }}</td>
+                {% endif %}
+            {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class="d-flex justify-content-end">
+    {% include pagination.html %}
+</div>

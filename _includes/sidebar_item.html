@@ -1,0 +1,20 @@
+<li class="nav-item">
+    {% if include.param.child %}
+    <a class="nav-link" href="#" data-toggle="collapse" data-target="#sidebar-sub-{{ include.param.id }}" aria-expanded="false" aria-controls="#sidebar-sub-{{ include.param.id }}">
+        <i data-feather="{{ include.param.icon }}"></i>
+        {{ include.param.label }}
+    </a>
+    <div class="collapse" id="sidebar-sub-{{ include.param.id }}">
+        <ul class="nav flex-column">
+            {% for item in include.param.child %}
+            {% include sidebar_item.html param=item %}
+            {% endfor %}
+        </ul>
+    </div>
+    {% else %}
+    <a class="nav-link{% if page.sidebar_active == include.param.id %} active{% endif %}" href="{% if include.param.link %}{{ include.param.link }}{% else %}#{% endif %}">
+        <i data-feather="{{ include.param.icon }}"></i>
+        {{ include.param.label }}
+    </a>
+    {% endif %}
+</li>

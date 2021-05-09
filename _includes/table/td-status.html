@@ -1,0 +1,15 @@
+<td class="text-center">
+    {% if include.config.status %}
+        {% for item in include.config.status %}
+            {% if include.data[include.config.key] == item.value %}
+                <span class="text-{{ item.color }}" data-toggle="tooltip" title="{{ item.label }}"><i data-feather="{{ item.icon }}"></i></span>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        {% if include.data[include.config.key] %}
+            <span class="text-success" data-toggle="tooltip" title="Enabled"><i data-feather="check-square"></i></span>
+        {% else %}
+            <span class="text-danger" data-toggle="tooltip" title="Disabled"><i data-feather="square"></i></span>
+        {% endif %}
+    {% endif %}
+</td>

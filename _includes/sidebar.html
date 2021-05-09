@@ -1,0 +1,32 @@
+<div id="sidebar">
+    <div id="sidebar-navigation">
+        <div class="nav flex-column nav-pills" id="sidebar-navigation-tabs" role="tablist" aria-orientation="vertical">
+            {% for group in site.data.sidebar %}
+            <a class="nav-link" id="v-pills-{{ group.id }}-tab" data-toggle="pill" href="#v-pills-{{ group.id }}"
+               role="tab"
+               aria-controls="v-pills-{{ group.id }}" aria-selected="true" data-tooltip="{{ group.label }}">
+                <i data-feather="{{ group.icon }}"></i>
+            </a>
+            {% endfor %}
+        </div>
+        <div class="tab-content" id="sidebar-navigation-content">
+            {% for group in site.data.sidebar %}
+            <div class="tab-pane fade" id="v-pills-{{ group.id }}" role="tabpanel"
+                 aria-labelledby="v-pills-{{ group.id }}-tab">
+                <h5 class="tab-content-title">{{ group.label }}</h5>
+                {% if group.child %}
+                <ul class="nav flex-column">
+                    {% for item in group.child %}
+                    {% include sidebar_item.html param=item %}
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div id="sidebar-off-canvas">
+        <i class="left" data-feather="chevrons-left"></i>
+        <i class="right" data-feather="chevrons-right"></i>
+    </div>
+</div>

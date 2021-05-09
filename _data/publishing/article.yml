@@ -1,0 +1,57 @@
+config:
+  list:
+    - key: name
+      label: Name
+      include_title: table/th-check-all.html
+      include_content: table/td-check.html
+    - key: category
+      label: Category
+    - key: active
+      label: Status
+      align: center
+      include_content: table/td-status.html
+    - key: action
+      label: Action
+      align: center
+      include_content: table/td-action.html
+  actions:
+    - name: Enable
+      color: success
+      icon: check-square
+    - name: Disable
+      color: danger
+      icon: square
+    - name: "-"
+    - name: Move to...
+      color: primary
+      icon: folder
+    - name: "-"
+    - name: Delete
+      color: danger
+      icon: trash
+data:
+  - name: "Coronavirus: Brazil becomes second country to hit one million cases"
+    id: 5
+    slug: "coronavirus-brazil-becomes-second-country-to-hit-one-million-cases"
+    active: true
+    category: "News"
+  - name: "Leroy Sane: Man City winger wants to leave, says Pep Guardiola"
+    id: 4
+    slug: "leroy-sane-man-city-winger-wants-to-leave-says-pep-guardiola"
+    active: true
+    category: "Sport"
+  - name: "The learning opportunities hiding in our failures"
+    id: 3
+    slug: "the-learning-opportunities-hiding-in-our-failures"
+    active: false
+    category: "Worklife"
+  - name: "The island with a key to our future"
+    id: 2
+    slug: "the-island-with-a-key-to-our-future"
+    active: true
+    category: "Travel"
+  - name: "How face masks affect our communication"
+    id: 1
+    slug: "how-face-masks-affect-our-communication"
+    active: true
+    category: "Future"

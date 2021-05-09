@@ -1,0 +1,6 @@
+<div class="pretty p-default p-round p-smooth">
+    <input type="radio" name="{{ include.name }}"{% if include.checked == true %} checked="checked"{% endif %} id="{{ include.id }}">
+    <div class="state {% if include.color %}p-{{ include.color }}-o{% else %}p-primary-o{% endif %}">
+        <label for="{{ include.id }}">{{ include.label }}</label>
+    </div>
+</div>

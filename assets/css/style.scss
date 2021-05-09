@@ -1,0 +1,602 @@
+@import "font_nunito";
+@import "font_ibm_psc";
+@import "../plugins/bootstrap/scss/functions";
+@import "variables";
+@import "../plugins/bootstrap/scss/variables";
+@import "../plugins/bootstrap/scss/mixins";
+@import "../plugins/bootstrap/scss/root";
+@import "../plugins/bootstrap/scss/reboot";
+@import "../plugins/bootstrap/scss/type";
+@import "../plugins/bootstrap/scss/images";
+@import "../plugins/bootstrap/scss/code";
+@import "../plugins/bootstrap/scss/grid";
+@import "../plugins/bootstrap/scss/tables";
+@import "../plugins/bootstrap/scss/forms";
+@import "../plugins/bootstrap/scss/buttons";
+@import "../plugins/bootstrap/scss/transitions";
+@import "../plugins/bootstrap/scss/dropdown";
+@import "../plugins/bootstrap/scss/button-group";
+@import "../plugins/bootstrap/scss/input-group";
+@import "../plugins/bootstrap/scss/custom-forms";
+@import "../plugins/bootstrap/scss/nav";
+@import "../plugins/bootstrap/scss/navbar";
+@import "../plugins/bootstrap/scss/card";
+@import "../plugins/bootstrap/scss/breadcrumb";
+@import "../plugins/bootstrap/scss/pagination";
+@import "../plugins/bootstrap/scss/badge";
+@import "../plugins/bootstrap/scss/jumbotron";
+@import "../plugins/bootstrap/scss/alert";
+@import "../plugins/bootstrap/scss/progress";
+@import "../plugins/bootstrap/scss/media";
+@import "../plugins/bootstrap/scss/list-group";
+@import "../plugins/bootstrap/scss/close";
+@import "../plugins/bootstrap/scss/toasts";
+@import "../plugins/bootstrap/scss/modal";
+@import "../plugins/bootstrap/scss/tooltip";
+@import "../plugins/bootstrap/scss/popover";
+@import "../plugins/bootstrap/scss/carousel";
+@import "../plugins/bootstrap/scss/spinners";
+@import "../plugins/bootstrap/scss/utilities";
+@import "../plugins/bootstrap/scss/print";
+@import "../plugins/pretty-checkbox/src/scss/variables";
+@import "../plugins/pretty-checkbox/src/scss/core";
+@import "../plugins/pretty-checkbox/src/scss/extras/curve";
+@import "../plugins/pretty-checkbox/src/scss/extras/round";
+@import "../plugins/pretty-checkbox/src/scss/extras/colors";
+@import "../plugins/pretty-checkbox/src/scss/elements/default/outline";
+@import "../plugins/pretty-checkbox/src/scss/extras/animation";
+@import "../plugins/selectize-0.12.6/selectize.bootstrap3.css";
+
+$font-title: 'IBM Plex Sans Condensed', $font-family-sans-serif !default;
+$navbar-height: 4.7 * $spacer;
+$sidebar-width: 320px;
+
+html, body {
+  background-color: $gray-100;
+  min-height: 100vh;
+}
+
+//
+// Typography
+h1, h2, h3, h4, h5, h6, th,
+.h1, .h2, .h3, .h4, .h5, .h6, .btn,
+.breadcrumb, .lead, .pagination, .tab-content-title,
+#navbar-menu > .navbar-nav > .nav-item > a
+{
+  font-family: $font-title;
+  letter-spacing: .75px;
+}
+
+.lead {
+  font-weight: 500;
+}
+
+h1, h2, h3, h4, h5, h6, th,
+.h1, .h2, .h3, .h4, .h5, .h6, .btn,
+.tab-content-title,
+#navbar-menu > .navbar-nav > .nav-item > a
+{
+  font-weight: 700;
+}
+
+th,
+.btn, .pagination {
+  text-transform: uppercase;
+  font-size: .8rem;
+}
+
+//
+// Links
+a {
+  transition: color .2s linear;
+}
+
+//
+// Bootstrap
+
+.dropdown-menu {
+  box-shadow: $box-shadow-sm !important;
+}
+
+// Fix tooltip issue: tooltip not center when content is SVG
+.tooltip {
+  top: 0;
+}
+
+.feather {
+  .btn &,
+  .breadcrumb &,
+  .dropdown-item &,
+  td & {
+    height: 1.3em;
+    vertical-align: text-bottom;
+  }
+
+  .breadcrumb & {
+    margin-right: .25 * $spacer;
+  }
+
+  .dropdown-item & {
+    margin-right: .5 * $spacer;
+  }
+}
+
+//
+// CKEditor
+
+// Make toolbar items wrap
+.ck.ck-toolbar.ck-toolbar_grouping > .ck-toolbar__items {
+  flex-wrap: wrap !important;
+}
+
+//
+// Selectize
+
+.selectize-control.multi .selectize-input > div {
+  background-color: $gray-400;
+  padding: 2px 5px;
+}
+
+//
+// Preload
+
+#preload {
+  background-color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $zindex-fixed + 1000;
+
+  // Auto hide preload if JS occur error
+  &.failover {
+    -moz-animation: preloadFailover 0s ease-in 5s forwards;
+    -webkit-animation: preloadFailover 0s ease-in 5s forwards;
+    -o-animation: preloadFailover 0s ease-in 5s forwards;
+    animation: preloadFailover 0s ease-in 5s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes preloadFailover {
+  to {
+    width:0;
+    height:0;
+    overflow:hidden;
+  }
+}
+
+@-webkit-keyframes preloadFailover {
+  to {
+    width:0;
+    height:0;
+    visibility:hidden;
+  }
+}
+
+//
+// Site Wrapper
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#wrapper-dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+//
+// Navbar
+
+#navbar {
+  background-color: $white;
+  border-bottom: solid $border-width $border-color;
+  box-shadow: $box-shadow-sm !important;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  z-index: $zindex-dropdown;
+
+  .navbar-brand {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    img {
+      max-height: 33px;
+    }
+
+    @media (max-width: map_get($grid-breakpoints, lg) - 1) {
+      margin-left: $navbar-padding-x;
+    }
+  }
+
+  &-menu {
+    .feather {
+      background-color: $navbar-light-toggler-border-color;
+      border-radius: 1rem * $line-height-base / 2;
+      height: 1rem * $line-height-base;
+      margin-right: $spacer / 4;
+      padding: .3rem;
+    }
+
+    .dropdown-item {
+      .feather {
+        background-color: transparent;
+        border: solid 1px $navbar-light-toggler-border-color;
+      }
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: map_get($grid-breakpoints, lg) - 1) {
+    &-menu {
+      background-color: $white;
+      left: 100%;
+      opacity: 0;
+      overflow-x: hidden;
+      position: absolute;
+      top: $navbar-height;
+      transition-duration: 150ms;
+      transition-property: left, opacity, width;
+      transition-timing-function: ease-in;
+      width: 0;
+      z-index: $zindex-dropdown;
+
+      &.show {
+        box-shadow: $box-shadow-sm !important;
+        left: 0;
+        opacity: 1;
+        width: 100%;
+      }
+
+      .navbar-nav {
+        padding: $spacer $spacer;
+      }
+
+      &-toggler {
+        .down { display: inline-block; }
+        .up { display: none; }
+
+        &.show {
+          .down { display: none; }
+          .up { display: inline-block; }
+        }
+      }
+    }
+  }
+}
+
+//
+// Breadcrumb
+.breadcrumb {
+  padding: .6rem;
+  font-size: .75rem;
+}
+
+//
+// Main section wrapper (include Sidebar & Content)
+
+#main {
+  &, #content {
+    min-height: calc(100vh - #{$navbar-height});
+    position: relative;
+  }
+
+  @media (min-width: map_get($grid-breakpoints, lg)) {
+    display: flex;
+    flex: 1;
+  }
+}
+
+//
+// Sidebar
+
+#sidebar {
+  background-color: $white;
+  box-shadow: $box-shadow-sm;
+  position: relative;
+  width: $sidebar-width;
+  transition: margin-left 200ms ease-in-out;
+  z-index: $zindex-dropdown;
+
+  &-off-canvas {
+    display: none;
+  }
+
+  @media (min-width: map_get($grid-breakpoints, lg)) {
+    &-off-canvas {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      /*border: solid 1px $blue;*/
+      color: $blue;
+      /*opacity: .8;*/
+      cursor: pointer;
+      /*box-shadow: $box-shadow-sm;*/
+      z-index: $zindex-fixed;
+      border-radius: 7px;
+      width: 32px;
+      margin-left: -16px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: margin-left 200ms ease-in-out;
+      transition-property: margin-right, top, color, background-color;
+    }
+
+    &.off-canvas {
+      margin-left: -$sidebar-width;
+
+      #sidebar-off-canvas {
+        background-color: $blue;
+        color: $white;
+        box-shadow: $box-shadow-lg;
+        top: 48px;
+        right: 0;
+        margin-right: -30px;
+        border-radius: 0 16px 16px 0;
+      }
+
+      .left {
+        display: none;
+      }
+
+      .right {
+        display: block;
+      }
+    }
+
+    &:not(.off-canvas) {
+      .left {
+        display: block;
+      }
+
+      .right {
+        display: none;
+      }
+    }
+  }
+
+  &-navigation {
+    border-right: solid $border-width $border-color;
+    display: flex;
+    height: 100%;
+
+    &-tabs {
+      border-right: solid $border-width $border-color;
+      box-shadow: $box-shadow-sm;
+      padding: $spacer / 2;
+
+      .nav-link {
+        margin-bottom: $spacer / 8;
+        margin-top: $spacer / 8;
+        padding: $spacer / 2 $spacer / 2;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &:not(.active) {
+          color: $gray-800;
+        }
+      }
+    }
+
+    &-content {
+      flex: 1;
+      padding: $spacer / 2;
+
+      .tab-content-title {
+        font-weight: $font-weight-bolder;
+        margin: $spacer * 3 / 4 42px $spacer $spacer / 2;
+        text-transform: uppercase;
+      }
+
+      .nav {
+        .nav {
+          font-size: .9em;
+          margin-left: $spacer;
+        }
+      }
+
+      .nav-item {
+        .active {
+          color: $gray-800;
+          font-weight: $font-weight-bolder;
+        }
+      }
+
+      .nav-link {
+        border-bottom: solid $border-width $border-color;
+        padding: $spacer $spacer / 2;
+
+        &[data-toggle="collapse"]:after {
+          content: "";
+          border-right: .3em solid transparent;
+          border-left: .3em solid transparent;
+          float: right;
+          margin-top: .5rem;
+        }
+
+        &[data-toggle="collapse"][aria-expanded="false"]:after {
+          border-top: .3em solid;
+          border-bottom: 0;
+        }
+
+        &[data-toggle="collapse"][aria-expanded="true"]:after {
+          border-bottom: .3em solid;
+          border-top: 0;
+        }
+
+        .feather {
+          width: 1.2em;
+          vertical-align: bottom;
+          margin-right: .5em;
+        }
+      }
+    }
+  }
+
+  @media (max-width: map_get($grid-breakpoints, lg) - 1) {
+    bottom: 0;
+    box-shadow: none;
+    margin-left: -320px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition-duration: 200ms;
+    transition-property: margin-left, opacity;
+    transition-timing-function: ease-in;
+    z-index: $zindex-dropdown;
+
+    &.show {
+      box-shadow: $box-shadow-sm !important;
+      margin-left: 0;
+      opacity: 1;
+    }
+  }
+}
+
+//
+// Content container
+
+#content {
+  flex: 1;
+  padding: $spacer;
+
+  @media (min-width: map_get($grid-breakpoints, md)) {
+    padding-bottom: 4 * $spacer;
+  }
+}
+
+//
+// Footer
+
+footer {
+  text-transform: uppercase;
+  font-size: .85em;
+  letter-spacing: .1em;
+
+  @media (min-width: map_get($grid-breakpoints, md)) {
+    background-color: $white;
+    box-shadow: $box-shadow-sm;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 $spacer;
+    height: 3 * $spacer;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  @media (max-width: map_get($grid-breakpoints, md) - 1) {
+    margin-left: -$spacer;
+    margin-right: -$spacer;
+    padding: $spacer;
+    text-align: center;
+  }
+
+  a {
+    display: inline-block;
+    padding: 0 $spacer / 2;
+    border-left: solid $border-width $gray-500;
+    margin-left: -4px;
+    line-height: .6 * $spacer;
+
+    &:first-child {
+      border-left: none;
+      margin-left: 0;
+    }
+  }
+}
+
+//
+// Form
+
+.form {
+  &-action {
+    display: flex;
+    justify-content: space-between;
+
+    .dropdown {
+      display: inline-block;
+    }
+
+    @media (max-width: map_get($grid-breakpoints, lg) - 1) {
+      display: block;
+
+      .btn {
+        display: block;
+        margin-bottom: map_get($spacers, 2);
+        width: 100%;
+      }
+
+      .dropdown {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  &-layout-sidebar {
+    > * {
+      margin-bottom: map_get($spacers, 4);
+    }
+
+    @media (min-width: map_get($grid-breakpoints, md)) {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: row;
+
+      .left {
+        flex: 1;
+      }
+
+      .right {
+        margin-left: $spacer;
+        width: 320px;
+      }
+    }
+  }
+
+  &-group {
+    &.required {
+      > label:after {
+        content: " *";
+        color: $red;
+        font-family: $font-title;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+//
+// List
+
+.list-filter {
+  > .form-inline > * {
+    margin: map_get($spacers, 1);
+  }
+}

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Sang Lu">
+    <meta name="generator" content="Jekyll v{{ jekyll.version }}">
+    <title>{{ page.title | smartify }} · CWS Admin Theme</title>
+    <link rel="canonical" href="{{ site.url | append: page.url }}">
+    <link href="assets/dist/style.min.css" rel="stylesheet">
+    {%- for css in page.extra_css %}
+    <link href="{{ css }}" rel="stylesheet">
+    {%- endfor %}
+</head>
+<body {% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
+<div id="preload" class="failover">
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+{{ content }}
+{%- if page.include_js != false -%}
+<script src="assets/dist/bundle.min.js"></script>
+{%- for js in page.extra_js %}
+<script src="{{ js }}"></script>
+{%- endfor %}
+{%- endif -%}
+{{ page.script }}
+</body>
+</html>

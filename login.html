@@ -1,0 +1,45 @@
+---
+layout: minimal
+title: Login
+---
+<div class="container my-4">
+    <div class="row">
+        <div class="col-12 col-md-6 col-xl-4 offset-md-3 offset-xl-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <div class="text-center mb-4">
+                        <img src="assets/img/logo.png"/>
+                    </div>
+                    <div class="text-center mb-4">Enter your email and password to login</div>
+                    <form action="./" method="get">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="email" placeholder="Your email address" autocomplete="off"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="password" placeholder="Your password" autocomplete="off"/>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="remember_me">
+                                <label for="remember_me" class="form-check-label">Remember me</label>
+                            </div>
+                            <a href="forgot-password.html">Forgot password</a>
+                        </div>
+                        <button type="submit" class="btn btn-dark btn-block">Login</button>
+                        <hr/>
+                        <div class="d-flex justify-content-between btn-group">
+                            <a href="#" class="btn btn-danger">
+                                <i data-feather="mail"></i>
+                                Google
+                            </a>
+                            <a href="#" class="btn btn-primary">
+                                <i data-feather="facebook"></i>
+                                Facebook
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

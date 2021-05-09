@@ -1,0 +1,8 @@
+<footer>
+    <div>{{ site.data.footer.copyright }}</div>
+    <div>
+        {% for link in site.data.footer.links %}
+            <a href="{{ link.link }}">{{ link.label }}</a>
+        {% endfor %}
+    </div>
+</footer>

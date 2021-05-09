@@ -1,0 +1,27 @@
+{
+  "name": "cws-cms-theme",
+  "version": "0.1.0",
+  "description": "HTML Admin Theme for CWS CMS",
+  "scripts": {
+    "build": "npm-run-all css-compile js-compile site-build",
+    "clean": "rm -rf .jekyll-cache _site assets/dist",
+    "start": "npm run build && npm-run-all --parallel watch-css watch-js site-serve",
+    "css-build": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 assets/css/ -o assets/dist/",
+    "css-minify": "cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output assets/dist/style.min.css assets/dist/style.css",
+    "css-compile": "npm-run-all css-build css-minify",
+    "js-compile": "uglifyjs assets/plugins/jquery-3.5.1.min.js assets/plugins/feather.min.js assets/plugins/js.cookie-3.0.0-rc.0.min.js assets/plugins/selectize-0.12.6/selectize.min.js assets/plugins/bootstrap/dist/js/bootstrap.bundle.min.js assets/js/cws.js -o assets/dist/bundle.min.js -c --source-map",
+    "site-build": "bundle exec jekyll build",
+    "site-serve": "bundle exec jekyll serve",
+    "watch-css": "nodemon --watch assets/css/ --ext scss --exec \"npm run css-compile\"",
+    "watch-js": "nodemon --watch assets/js/cws.js --exec \"npm run js-compile\""
+  },
+  "author": "Sang Lu <connect.with.sang@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "clean-css-cli": "^4.3.0",
+    "node-sass": "^5.0",
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5",
+    "uglify-js": "^3.9.4"
+  }
+}

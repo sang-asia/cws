@@ -1,0 +1,49 @@
+---
+layout: default
+title: Contact
+sidebar_active: "contact"
+breadcrumb:
+    - label: Contact
+      link: null
+      active: true
+---
+
+{% include navbar.html %}
+
+<div id="main">
+    {% include sidebar.html %}
+    <div id="content">
+        {% include breadcrumb.html %}
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="form-action mb-3">
+                    <div>
+                        {% include table/action.html action=site.data.contact.config.actions %}
+                        <a class="btn btn-dark" href="#list-filter" data-toggle="collapse" aria-expanded="true" aria-controls="list-filter">
+                            <i data-feather="filter"></i>
+                            Filter
+                        </a>
+                    </div>
+                </div>
+                <div class="card collapse mb-3 list-filter" id="list-filter">
+                    <div class="card-body form-inline p-1 bg-gradient-light">
+                        <input type="text" class="form-control form-control-sm" placeholder="Name / Email / Phome" />
+                        <input type="text" class="form-control form-control-sm" placeholder="Title" />
+                        <input type="text" class="form-control form-control-sm" placeholder="Message" />
+                        <select class="form-control form-control-sm">
+                            <option value="-1">- All Status -</option>
+                            <option value="0">Read</option>
+                            <option value="1">Unread</option>
+                        </select>
+                        <button type="submit" class="btn btn-sm btn-dark">
+                            <i data-feather="filter"></i>
+                            Filter
+                        </button>
+                    </div>
+                </div>
+                {% include table/main.html config=site.data.contact.config.list data=site.data.contact.data %}
+            </div>
+        </div>
+        {% include footer.html %}
+    </div>
+</div>

@@ -1,0 +1,62 @@
+---
+layout: default
+title: Publishing Category
+sidebar_active: "publishing-category"
+breadcrumb:
+    - label: Publishing
+      link: null
+      active: true
+    - label: Category
+      link: null
+      active: true
+---
+
+{% include navbar.html %}
+
+<div id="main">
+    {% include sidebar.html %}
+    <div id="content">
+        {% include breadcrumb.html %}
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="form-action mb-3">
+                    <div>
+                        {% include table/action.html action=site.data.publishing.category.config.actions %}
+                        <a class="btn btn-dark" href="#list-filter" data-toggle="collapse" aria-expanded="true" aria-controls="list-filter">
+                            <i data-feather="filter"></i>
+                            Filter
+                        </a>
+                    </div>
+                    <div>
+                        <a class="btn btn-primary" href="publishing-category-form.html">
+                            <i data-feather="plus"></i>
+                            Create
+                        </a>
+                    </div>
+                </div>
+                <div class="card collapse mb-3 list-filter" id="list-filter">
+                    <div class="card-body form-inline p-1 bg-gradient-light">
+                        <input type="text" id="name" class="form-control form-control-sm" placeholder="Category Name" />
+                        <select class="form-control form-control-sm" id="parent">
+                            <option value="-1">- All Category -</option>
+                            {% for item in site.data.publishing.category.data %}
+                                <option>{{ item.name }}</option>
+                            {% endfor %}
+                        </select>
+                        <select class="form-control form-control-sm" id="status">
+                            <option value="-1">- All Status -</option>
+                            <option value="0">Disabled</option>
+                            <option value="1">Enabled</option>
+                        </select>
+                        <button type="submit" class="btn btn-sm btn-dark">
+                            <i data-feather="filter"></i>
+                            Filter
+                        </button>
+                    </div>
+                </div>
+                {% include table/main.html config=site.data.publishing.category.config.list data=site.data.publishing.category.data %}
+            </div>
+        </div>
+        {% include footer.html %}
+    </div>
+</div>

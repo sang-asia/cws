@@ -1,0 +1,58 @@
+config:
+  list:
+    - key: name
+      label: Name
+      include_title: table/th-check-all.html
+      include_content: table/td-check.html
+    - key: parent
+      label: Parent
+    - key: active
+      label: Status
+      align: center
+      include_content: table/td-status.html
+    - key: action
+      label: Action
+      align: center
+      include_content: table/td-action.html
+  actions:
+    - name: Enable
+      color: success
+      icon: check-square
+    - name: Disable
+      color: danger
+      icon: square
+    - name: "-"
+    - name: Delete
+      color: danger
+      icon: trash
+data:
+  - name: Culture
+    id: 6
+    slug: culture
+    active: true
+    parent:
+  - name: News
+    id: 5
+    slug: news
+    active: true
+    parent:
+  - name: Sport
+    id: 4
+    slug: sport
+    active: true
+    parent: News
+  - name: Worklife
+    id: 3
+    slug: worklife
+    active: true
+    parent:
+  - name: Travel
+    id: 2
+    slug: travel
+    active: false
+    parent:
+  - name: Future
+    id: 1
+    slug: future
+    active: true
+    parent:

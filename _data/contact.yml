@@ -1,0 +1,83 @@
+config:
+  list:
+    - key: id
+      label: ID
+      include_title: table/th-check-all.html
+      include_content: table/td-check.html
+    - key: first_name
+      label: First Name
+    - key: last_name
+      label: Last Name
+    - key: title
+      label: Title
+    - key: date
+      label: Date
+      align: center
+    - key: unread
+      label: Unread
+      align: center
+      include_content: table/td-status.html
+      status:
+        - label: Unread
+          color: primary
+          icon: eye
+          value: true
+        - label: Read
+          color: secondary
+          icon: eye-off
+          value: false
+    - key: action
+      label: Action
+      align: center
+      include_content: table/td-action.html
+      actions:
+        - label: Detail
+          icon: edit-2
+          link: "contact-detail.html"
+          color: primary
+        - label: Delete
+          icon: trash
+          link: "#"
+          color: danger
+  actions:
+    - name: Mark as Read
+      color: secondary
+      icon: eye-off
+    - name: Mark as Unread
+      color: primary
+      icon: eye
+    - name: "-"
+    - name: Delete
+      color: danger
+      icon: trash
+data:
+  - id: 12
+    first_name: Barry
+    last_name: Holden
+    email: scelerisque@Mauris.org
+    phone: 1-118-122-7502
+    company: Pulvinar Arcu Et Inc.
+    title: Cursus vestibulum mauris magna
+    message: Aliquam eros turpis non enim. Mauris quis turpis vitae purus gravida sagittis. Duis gravida. Praesent eu nulla at sem molestie sodales.
+    unread: true
+    date: 11/08/2020
+  - id: 11
+    first_name: Amber
+    last_name: Boyle
+    email: Mauris.eu.turpis@sagittisfelisDonec.com
+    phone: 1-663-939-9263
+    company: Risus Donec Egestas LLP
+    title: Fringilla cursus purus nullam scelerisque neque
+    message: Vivamus sit amet risus. Donec egestas. Aliquam nec enim. Nunc ut erat. Sed nunc est, mollis non, cursus non, egestas a, dui. Cras pellentesque. Sed dictum. Proin eget odio. Aliquam vulputate ullamcorper magna. Sed eu
+    unread: false
+    date: 07/08/2020
+  - id: 10
+    first_name: Keane
+    last_name: Compton
+    email: ipsum@acmieleifend.net
+    phone: 1-652-199-4480
+    company: Eros Nec Tellus Company
+    title: Lobortis, nisi nibh lacinia orci, consectetuer
+    message: Imperdiet non, vestibulum nec, euismod in, dolor. Fusce feugiat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam auctor, velit eget laoreet posuere, enim nisl elementum purus, accumsan interdum libero
+    unread: false
+    date: 07/08/2020

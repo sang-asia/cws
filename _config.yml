@@ -1,0 +1,13 @@
+exclude: [
+  _site,
+  package.json,
+  readme.md,
+  yarn.lock,
+  assets/css/style.scss,
+  assets/js/cws.js,
+  assets/plugins/bootstrap,
+  assets/plugins/pretty-checkbox,
+  assets/plugins/feather.min*,
+  assets/plugins/jquery-*.*.*.min.js,
+  assets/plugins/js.cookie-*.min.js
+]

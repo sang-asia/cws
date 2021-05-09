@@ -1,0 +1,105 @@
+---
+layout: default
+title: Contact Detail
+sidebar_active: "contact"
+breadcrumb:
+    - label: Contact
+      link: "contact.html"
+      active: false
+    - label: "Detail #12"
+      link: null
+      active: true
+---
+
+{% include navbar.html %}
+
+<div id="main">
+    {% include sidebar.html %}
+    <div id="content">
+        {% include breadcrumb.html %}
+        <!--<form method="get" action="publishing-article.html">-->
+            <div class="form-layout-sidebar">
+                <!-- General Information -->
+                <div class="card left shadow-sm">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                    <div class="form-control">{{ site.data.contact.data[0].first_name }}</div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <div class="form-control">{{ site.data.contact.data[0].last_name }}</div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <div class="form-control">{{ site.data.contact.data[0].email }}</div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <div class="form-control">{{ site.data.contact.data[0].phone }}</div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <div class="form-group">
+                                    <label>Company</label>
+                                    <div class="form-control">{{ site.data.contact.data[0].company }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Title</label>
+                            <div class="form-control">{{ site.data.contact.data[0].title }}</div>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <div>
+                                <blockquote class="blockquote">
+                                    {{ site.data.contact.data[0].message }}
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- / General Information -->
+                <div class="right">
+                    <!-- Meta Information -->
+                    <div class="card mb-3 shadow-sm">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>Status</label>
+                                <div>
+                                    {% include form/radio.html color="success" id="status-enabled" name="status" label="Read" %}
+                                    {% include form/radio.html color="danger" id="status-disabled" name="status" label="Unread" checked=true %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / Meta Information -->
+                    <!-- Actions -->
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <button class="btn btn-block btn-primary d-flex justify-content-between" type="submit">
+                                Save
+                                <i data-feather="save"></i>
+                            </button>
+                            <a href="contact.html" class="btn btn-block btn-danger d-flex justify-content-between">
+                                Return
+                                <i data-feather="x-circle"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- / Actions -->
+                </div>
+            </div>
+        <!--</form>-->
+        {% include footer.html %}
+    </div>
+</div>

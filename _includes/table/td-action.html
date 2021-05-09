@@ -1,0 +1,10 @@
+<td class="text-center text-nowrap">
+    {% if include.config.actions %}
+        {% for action in include.config.actions %}
+            <a class="text-{{ action.color }}" href="{{ action.link }}" data-toggle="tooltip" title="{{ action.label }}"><i data-feather="{{ action.icon }}"></i></a>
+        {% endfor %}
+    {% else %}
+        <a class="text-primary" href="#" data-toggle="tooltip" title="Edit"><i data-feather="edit-2"></i></a>
+        <a class="text-danger" href="#" data-toggle="tooltip" title="Delete"><i data-feather="trash"></i></a>
+    {% endif %}
+</td>

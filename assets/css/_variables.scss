@@ -1,0 +1,109 @@
+// Color system
+
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$blue: #0056b3 !default;
+$indigo: #570ecc !default;
+$purple: #59359c !default;
+$pink: #c23476 !default;
+$red: #b52b39 !default;
+$orange: #d66a11 !default;
+$yellow: #d9a407 !default;
+$green: #1f8035 !default;
+$teal: #1aa37a !default;
+$cyan: #118091 !default;
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-gradients: true !default;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px
+) !default;
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px,
+        xxl: 1320px
+) !default;
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns:                12 !default;
+$grid-gutter-width:           10px !default;
+$grid-row-columns:            6 !default;
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+
+$border-color: $gray-100 !default;
+// $component-active-bg: $gray-700 !default;
+
+// Make collapse smoother
+$transition-collapse: height .2s linear !default;
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacer: .75rem !default;
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// stylelint-disable value-keyword-case
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-base: "Nunito", $font-family-sans-serif !default;
+
+$font-size-base: .85rem !default;
+
+// Breadcrumbs
+
+$breadcrumb-bg: $gray-200 !default;
+
+// Dropdowns
+//
+// Dropdown menu container and contents.
+
+$dropdown-item-padding-x: $spacer !default;
+$dropdown-border-color: rgba($black, .07) !default;

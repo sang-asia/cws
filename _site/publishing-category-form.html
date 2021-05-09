@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Sang Lu">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Create Category · CWS Admin Theme</title>
+    <link rel="canonical" href="http://localhost:4000/publishing-category-form.html">
+    <link href="assets/dist/style.min.css" rel="stylesheet">
+  </head>
+  <body >
+    <div id="preload" class="failover">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <div id="wrapper">
+      <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+        <button class="navbar-toggler" type="button" aria-label="Toggle Sidebar" id="sidebar-toggler">
+          <i data-feather="menu"></i>
+        </button>
+        <a class="navbar-brand" href="./">
+          <img src="assets/img/logo.png"/>
+        </a>
+        <div id="navbar-menu">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                <i data-feather="user"></i>
+                Administrator
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">
+                  <i data-feather="user"></i>
+                  Profile
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="login.html">
+                  <i data-feather="log-out"></i>
+                  Logout
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <button class="navbar-toggler" type="button" aria-label="Toggle Top Menu" id="navbar-menu-toggler">
+          <i data-feather="chevrons-down" class="down"></i>
+          <i data-feather="chevrons-up" class="up"></i>
+        </button>
+      </nav>
+      <div id="main">
+        <div id="sidebar">
+          <div id="sidebar-navigation">
+            <div class="nav flex-column nav-pills" id="sidebar-navigation-tabs" role="tablist" aria-orientation="vertical">
+              <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
+               role="tab"
+               aria-controls="v-pills-home" aria-selected="true" data-tooltip="Home">
+                <i data-feather="package"></i>
+              </a>
+              <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings"
+               role="tab"
+               aria-controls="v-pills-settings" aria-selected="true" data-tooltip="Settings">
+                <i data-feather="settings"></i>
+              </a>
+            </div>
+            <div class="tab-content" id="sidebar-navigation-content">
+              <div class="tab-pane fade" id="v-pills-home" role="tabpanel"
+                 aria-labelledby="v-pills-home-tab">
+                <h5 class="tab-content-title">Home</h5>
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link" href="./">
+                      <i data-feather="navigation"></i>
+                      Dashboard
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="collapse" data-target="#sidebar-sub-publishing" aria-expanded="false" aria-controls="#sidebar-sub-publishing">
+                      <i data-feather="file-text"></i>
+                      Publishing
+                    </a>
+                    <div class="collapse" id="sidebar-sub-publishing">
+                      <ul class="nav flex-column">
+                        <li class="nav-item">
+                          <a class="nav-link active" href="publishing-category.html">
+                            <i data-feather="folder"></i>
+                            Category
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="publishing-article.html">
+                            <i data-feather="file-text"></i>
+                            Article
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact.html">
+                      <i data-feather="inbox"></i>
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
+                 aria-labelledby="v-pills-settings-tab">
+                <h5 class="tab-content-title">Settings</h5>
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <i data-feather="settings"></i>
+                      General Settings
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <i data-feather="users"></i>
+                      Users Management
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      <i data-feather="help-circle"></i>
+                      About us
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div id="sidebar-off-canvas">
+            <i class="left" data-feather="chevrons-left"></i>
+            <i class="right" data-feather="chevrons-right"></i>
+          </div>
+        </div>
+        <div id="content">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="./"><i data-feather="home"></i>Home</a>
+              </li>
+              <li class="breadcrumb-item active">
+                Publishing
+              </li>
+              <li class="breadcrumb-item">
+                <a href="publishing-category.html">Category</a>
+              </li>
+              <li class="breadcrumb-item active">
+                Create
+              </li>
+            </ol>
+          </nav>
+          <form method="get" action="publishing-category.html">
+            <div class="form-layout-sidebar">
+              <!-- General Information -->
+              <div class="left card shadow-sm">
+                <div class="card-body">
+                  <div class="form-group row required">
+                    <label class="col-12 col-md-3 col-form-label" for="name">Name</label>
+                    <div class="col-12 col-md-9">
+                      <input class="form-control" type="text" id="name" />
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-12 col-md-3 col-form-label" for="slug">Slug</label>
+                    <div class="col-12 col-md-9">
+                      <input class="form-control" type="text" id="slug" />
+                    </div>
+                  </div>
+                  <div class="form-group row required">
+                    <label class="col-12 col-md-3 col-form-label" for="parent">Parent</label>
+                    <div class="col-12 col-md-9">
+                      <select class="form-control" id="parent">
+                        <option value="-1">- No Parent -</option>
+                        <option>Culture</option>
+                        <option>News</option>
+                        <option>Sport</option>
+                        <option>Worklife</option>
+                        <option>Travel</option>
+                        <option>Future</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row required">
+                    <label class="col-12 col-md-3 col-form-label">Status</label>
+                    <div class="col-12 col-md-9 d-flex align-items-center">
+                      <div>
+                        <div class="pretty p-default p-round p-smooth">
+                          <input type="radio" name="status" checked="checked" id="status-enabled">
+                          <div class="state p-success-o">
+                            <label for="status-enabled">Enabled</label>
+                          </div>
+                        </div>
+                        <div class="pretty p-default p-round p-smooth">
+                          <input type="radio" name="status" id="status-disabled">
+                          <div class="state p-danger-o">
+                            <label for="status-disabled">Disabled</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-12 col-md-3 col-form-label" for="description">Description</label>
+                    <div class="col-12 col-md-9">
+                      <textarea class="form-control" id="description"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-12 col-md-3 col-form-label" for="meta-keyword">Meta Keyword</label>
+                    <div class="col-12 col-md-9">
+                      <input class="form-control" type="text" id="meta-keyword" data-toggle="tags" />
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-12 col-md-3 col-form-label" for="meta-description">Meta Description</label>
+                    <div class="col-12 col-md-9">
+                      <textarea class="form-control" id="meta-description"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- / General Information -->
+              <div class="right">
+                <!-- Actions -->
+                <div class="card mb-3 shadow-sm">
+                  <div class="card-body">
+                    <button class="btn btn-block btn-primary d-flex justify-content-between" type="submit">
+                      Save
+                      <i data-feather="save"></i>
+                    </button>
+                    <button class="btn btn-block btn-info d-flex justify-content-between" type="submit">
+                      Save &amp; Add
+                      <i data-feather="plus-circle"></i>
+                    </button>
+                    <a href="publishing-category.html" class="btn btn-block btn-danger d-flex justify-content-between">
+                      Return
+                      <i data-feather="x-circle"></i>
+                    </a>
+                  </div>
+                </div>
+                <!-- / Actions -->
+                <!-- Image -->
+                <div class="card shadow-sm">
+                  <div class="card-body">
+                    <img src="assets/img/no-image.png" class="img-thumbnail">
+                    <a href="#" class="d-block text-center text-danger my-1 py-1">Remove Image</a>
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="image">
+                      <label class="custom-file-label" for="image">Choose file</label>
+                    </div>
+                  </div>
+                </div>
+                <!-- / Image -->
+              </div>
+            </div>
+          </form>
+          <footer>
+            <div>Copyright &copy; 2020 by Sang Lu. All rights reserved.</div>
+            <div>
+              <a href="#">Support</a>
+              <a href="#">Privacy Policy</a>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script src="assets/dist/bundle.min.js"></script>
+    <script src="assets/plugins/ckeditor-4.14.1/ckeditor.js"></script><script>
+      // CKEDITOR.replace('editor', CWS.CKEDITOR_CONFIG.FULL);
+    </script>
+  </body>
+</html>
